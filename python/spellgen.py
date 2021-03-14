@@ -10,39 +10,71 @@
 
 # Import statements
 import random
+import mysql.connector
 
 # Start
 print("Generating spell . . .");
 
+# Initialize SQL cursor
+spellDB = mysql.connector.connect(
+	host = "localhost",
+	user = "root",
+	password = "password1234",
+	database = "spell_attributes"
+)
+spellCursor = spellDB.cursor();
+spellCursor.execute("SELECT ElementName FROM Element");
+listHolder = spellCursor.fetchall();
 
-# Initialize lists
-list_elements = ["Fire", "Wind", "Lightning", "Water"];
-list_targets = ["1", "2", "3", "4"];
-list_shapes = ["Bolt", "Beam", "Cone", "Blast"];
-list_effects = ["Stun", "Slow", "Knocks down", "Disarms"];
-list_lists = [list_elements, list_targets, list_shapes, list_effects];
+# Create lists to hold spell attributes
+listElements = [];
+listTargets = [];
+listShapes = [];
+listDamage = [];
+listEffects = [];
+
+# Fill lists with SQL data
+for item in listHolder:
+	listElements.append(item);
+
+spellCursor.execute("SELECT TargetValue FROM Target");
+listHolder = spellCursor.fetchall();
+for item in listHolder:
+	listTargets.append(item);
+
+spellCursor.execute("SELECT ShapeValue FROM Shape");
+listHolder = spellCursor.fetchall();
+for item in listHolder:
+	listShapes.append(item);
+
+spellCursor.execute("SELECT DamageValue FROM Damage");
+listHolder = spellCursor.fetchall();
+for item in listHolder:
+	listDamage.append(item);
+
+spellCursor.execute("SELECT EffectName FROM Effect");
+listHolder = spellCursor.fetchall();
+for item in listHolder:
+	listEffects.append(item);
+
+# List of lists for easier handling
+listAttributes = [listElements, listTargets, listShapes, listDamage, listEffects];
 
 # Prepare final spell
 finalSpell = [];
 
-# Randomly copy attributes to spell
-count = 0;
-while count < len(list_lists):
+for item in listAttributes:
 	randSelect = random.randint(0, 3);
-	finalSpell.append(list_lists[count][randSelect]);
-	count += 1;
+	tempString = str(item[randSelect]);
+	tempString = tempString.strip("(),'");
+	finalSpell.append(tempString);
 
 # Output spell description
 print("Element: " + finalSpell[0]);
 print("Targets: " + finalSpell[1]);
 print("Shape: " + finalSpell[2]);
-print("Effect: " + finalSpell[3]);
-
-# Output spell name
-
-
-
-
+print("Damage: " + finalSpell[3]);
+print("Effect: " + finalSpell[4]);
 
 
 
