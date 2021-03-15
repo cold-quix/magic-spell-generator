@@ -64,7 +64,7 @@ listAttributes = [listElements, listTargets, listShapes, listDamage, listEffects
 finalSpell = [];
 
 for item in listAttributes:
-	randSelect = random.randint(0, 3);
+	randSelect = random.randint(0, 11);
 	tempString = str(item[randSelect]);
 	tempString = tempString.strip("(),'");
 	finalSpell.append(tempString);

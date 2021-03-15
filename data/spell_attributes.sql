@@ -89,29 +89,63 @@ INSERT INTO Element(ElementName) VALUES
 	("Lightning"), 
     ("Fire"),
     ("Water"),
-    ("Wind")
+    ("Wind"),
+    ("Earth"),
+    ("Ice"),
+    ("Metal"),
+    ("Light"),
+    ("Shadow"),
+    ("Energy")
 ;
 INSERT INTO Target(TargetValue) VALUES
 	("1"), 
     ("2"),
     ("3"),
-    ("4")
+    ("4"),
+    ("Self"),
+    ("Nearest enemy"),
+    ("Farthest enemy"),
+    ("All enemies"),
+    ("Nearest ally"),
+    ("Farthest ally"),
+    ("All allies")
 ;
 INSERT INTO Shape(ShapeValue) VALUES
 	("Bolt"), 
     ("Beam"),
     ("Cone"),
-    ("Blast")
+    ("Blast"),
+    ("Cloud"),
+    ("Cyclone"),
+    ("Arcing chain"),
+    ("Wall"),
+    ("Trap"),
+    ("Caster sculpt"),
+    ("Puppeteered orb")
 ;
 INSERT INTO Damage(DamageValue) VALUES
 	("None"), 
     ("Low"),
     ("Medium"),
-    ("High")
+    ("High"),
+    ("Damage over time"),
+    ("Short delay"),
+    ("Medium delay"),
+    ("Long delay"),
+    ("Slight elemental weakness"),
+    ("Medium elemental weakness"),
+    ("High elemental weakness")
 ;
 INSERT INTO Effect(EffectName) VALUES
 	("Stun"), 
     ("Slow"),
-    ("Knocks down"),
-    ("Disarms")
+    ("Tumble"),
+    ("Disarm"),
+    ("Blind"),
+    ("Confuse"),
+    ("Charm"),
+    ("Cripple"),
+    ("Amnesia"),
+    ("Terrify"),
+    ("Sleep")
 ;
