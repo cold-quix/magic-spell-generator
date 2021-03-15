@@ -95,7 +95,8 @@ INSERT INTO Element(ElementName) VALUES
     ("Metal"),
     ("Light"),
     ("Shadow"),
-    ("Energy")
+    ("Energy"),
+    ("Poison")
 ;
 INSERT INTO Target(TargetValue) VALUES
 	("1"), 
