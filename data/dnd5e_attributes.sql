@@ -1,17 +1,17 @@
 /*
-FILE:			spell_attributes.sql
+FILE:			dnd5e_attributes.sql
 PROGRAMMER:		Jack Parkinson
-FIRST VERSION:	2020-03-07
+FIRST VERSION:	2020-04-18
 DESCRIPTION:
 	A creation script for the DB used in spell_generator.py.  This DB 
-    contains spell attribute data which will be used to make a random 
+    contains spell attribute data which will be used to make a D&D5e 
     spell and display it to the user at runtime.
 */
 /* Statements to destroy & create the database each time the script is run */
-DROP DATABASE IF EXISTS spell_attributes;
-CREATE DATABASE IF NOT EXISTS spell_attributes;
+DROP DATABASE IF EXISTS dnd5e_attributes;
+CREATE DATABASE IF NOT EXISTS dnd5e_attributes;
 
-USE spell_attributes;
+USE dnd5e_attributes;
 
 /*
 ==============
@@ -86,67 +86,54 @@ Data Insertion
 ==============
 */
 INSERT INTO Element(ElementName) VALUES
-	("Lightning"), 
+	("Acid"), 
+    ("Cold"),
     ("Fire"),
-    ("Water"),
-    ("Wind"),
-    ("Earth"),
-    ("Ice"),
-    ("Metal"),
-    ("Light"),
-    ("Shadow"),
-    ("Energy"),
-    ("Poison")
+    ("Force"),
+    ("Lightning"),
+    ("Necrotic"),
+    ("Poison"),
+    ("Psychic"),
+    ("Radiant"),
+    ("Thunder")
 ;
 INSERT INTO Target(TargetValue) VALUES
-	("1"), 
-    ("2"),
-    ("3"),
-    ("4"),
-    ("Self"),
-    ("Nearest enemy"),
-    ("Farthest enemy"),
-    ("All enemies"),
-    ("Nearest ally"),
-    ("Farthest ally"),
-    ("All allies")
+	("Self"), 
+    ("Enemy"),
+    ("1"),
+    ("2 separate"),
+    ("3 separate"),
+    ("2 group"),
+    ("3 group")
 ;
 INSERT INTO Shape(ShapeValue) VALUES
-	("Bolt"), 
-    ("Beam"),
-    ("Cone"),
-    ("Blast"),
-    ("Cloud"),
-    ("Cyclone"),
-    ("Arcing chain"),
-    ("Wall"),
-    ("Trap"),
-    ("Caster sculpt"),
-    ("Puppeteered orb")
+	("Cone"), 
+    ("Cube"),
+    ("Cylinder"),
+    ("Line"),
+    ("Sphere")
 ;
 INSERT INTO Damage(DamageValue) VALUES
-	("None"), 
-    ("Low"),
-    ("Medium"),
-    ("High"),
-    ("Damage over time"),
-    ("Short delay"),
-    ("Medium delay"),
-    ("Long delay"),
-    ("Slight elemental weakness"),
-    ("Medium elemental weakness"),
-    ("High elemental weakness")
+	("1d6"), 
+    ("2d6"),
+    ("3d8"),
+    ("4d8"),
+    ("3d10"),
+    ("4d12")
 ;
 INSERT INTO Effect(EffectName) VALUES
-	("Stun"), 
-    ("Slow"),
-    ("Tumble"),
-    ("Disarm"),
-    ("Blind"),
-    ("Confuse"),
-    ("Charm"),
-    ("Cripple"),
-    ("Amnesia"),
-    ("Terrify"),
-    ("Sleep")
+	("Blinded"), 
+    ("Charmed"),
+    ("Deafened"),
+    ("Frightened"),
+    ("Grappled"),
+    ("Incapacitated"),
+    ("Invisible"),
+    ("Paralyzed"),
+    ("Petrified"),
+    ("Poisoned"),
+    ("Prone"),
+    ("Restrained"),
+    ("Stunned"),
+    ("Unconscious")
 ;
