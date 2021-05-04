@@ -49,21 +49,21 @@ if spellSystem == Ruleset.DND_5.value:
 	spellDB = mysql.connector.connect(
 		host = "localhost",
 		user = "RemoteUser",
-		password = "8P#4Wfc7&@4FuJ",
+		password = "",
 		database = Ruleset.DND_5_DB.value
 	)
 elif spellSystem == Ruleset.PATHFINDER_1.value:
 	spellDB = mysql.connector.connect(
 		host = "localhost",
 		user = "RemoteUser",
-		password = "8P#4Wfc7&@4FuJ",
+		password = "",
 		database = Ruleset.PATHFINDER_1_DB.value
 	)
 else:
 	spellDB = mysql.connector.connect(
 		host = "localhost",
 		user = "RemoteUser",
-		password = "8P#4Wfc7&@4FuJ",
+		password = "",
 		database = Ruleset.GENERIC_DB.value
 	)
 spellCursor = spellDB.cursor();
@@ -201,24 +201,24 @@ print('''</div>
 print('''<!-- Navigation -->
 			<div name="spell_nav_wrapper" id="ID-spell_nav_wrapper" class="spell_nav_wrap">
 				<div name="spellgen_grid" id="ID-spellgen_grid" class="spell_nav_grid">
-					<div class="spell_one">
+					<div class="spell_one spellgen_format">
 						<form name="form_generic" method="POST" action="./spellgen.py">
 							<input name="form_system" id="ID-form_system" type="hidden" value="DND5e">
-							<input name="submit_system" id="ID-submit_system" type="submit" value="Generate DND5e" class="spellgen_link">
+							<input name="submit_system" id="ID-submit_system" type="submit" value="Dungeons & Dragons 5th Edition" class="spellgen_link">
 						</form>
 					</div>
 					
-					<div class="spell_two">
+					<div class="spell_two spellgen_format">
 						<form name="form_generic" method="POST" action="./spellgen.py">
 							<input name="form_system" id="ID-form_system" type="hidden" value="PF1e">
-							<input name="submit_generic" id="submit_generic" type="submit" value="Generate PF1e" class="spellgen_link">
+							<input name="submit_generic" id="submit_generic" type="submit" value="Pathfinder 1st Edition" class="spellgen_link">
 						</form>
 					</div>
 					
-					<div class="spell_three">
+					<div class="spell_three spellgen_format">
 						<form name="form_generic" method="POST" action="./spellgen.py">
 							<input name="form_system" id="ID-form_system" type="hidden" value="generic">
-							<input name="submit_generic" id="submit_generic" type="submit" value="Generate generic" class="spellgen_link" >
+							<input name="submit_generic" id="submit_generic" type="submit" value="Generic" class="spellgen_link" >
 						</form>
 					</div>
 				</div>
