@@ -1,0 +1,1 @@
+Self,Enemy,Single,Two separate,Three separate,Two together,Three together

@@ -1,0 +1,1 @@
+Self,Enemy,1,2 Individuals,3 Individuals,Group of 2,Group of 3

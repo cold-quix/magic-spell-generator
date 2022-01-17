@@ -1,0 +1,1 @@
+Bleed,Blinded,Confused,Cowering,Dazed,Dazzled,Deafened,Disabled,Entangled,Exhausted,Fascinated,Fatigued,Flat-Footed,Frightened,Grappled,Helpless,Incorporeal,Invisible,Nauseated,Panicked,Paralyzed,Petrified,Pinned,Prone,Shaken,Sickened,Staggered,Stunned,Unconscious
